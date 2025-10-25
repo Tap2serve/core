@@ -11,11 +11,11 @@ pipeline {
                         usernameVariable: "DOCKERHUB_USERNAME"
                     )]) {
                         echo "Logging in to Docker Hub..."
-                        sh "echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin"
+                        sh "echo $DOCKERHUB_PASSWORD | docker login -u aniketsinare --password-stdin"
 
                         echo "Pulling latest microservice images..."
-                        sh "docker pull $DOCKERHUB_USERNAME/auth-service:latest"
-                        sh "docker pull $DOCKERHUB_USERNAME/admin-service:latest"
+                        sh "docker pull aniketsinare/auth-service:latest"
+                        sh "docker pull aniketsinare/admin-service:latest"
                     }
                 }
             }
